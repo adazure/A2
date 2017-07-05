@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext');
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+div.context {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+div.header {
+    overflow: hidden;
+    clear: both;
+    padding: 10px;
+    color: #666;
+    font-size: 20px;
+    div.piece {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    div.header-club-phone {
+        margin-right: 20px;
+        i {
+            vertical-align: middle;
+            color: #34CCFF;
+        }
+        label {
+            display: inline-block;
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+    }
+    div.header-club-name {
+        label {
+            display: block;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+    }
+    div.header-club-social {
+        float: right;
+        label {
+            display: inline-block;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+        span {
+            display: inline-block;
+            i {
+                display: inline-block;
+                padding: 5px;
+                color: #777;
+            }
+        }
+    }
+}
