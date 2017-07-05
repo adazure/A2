@@ -4,7 +4,8 @@
   "description": "A2 Web Site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,10 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "jade": "^1.11.0",
     "mongoose": "^4.11.1",
+    "path": "^0.12.7",
     "request": "^2.81.0"
   }
 }
