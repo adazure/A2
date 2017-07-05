@@ -14,4 +14,4 @@ app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 
 
-app.listen(12345);
+app.listen(process.env.port || 8080);
