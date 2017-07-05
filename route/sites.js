@@ -25,11 +25,11 @@ module.exports = function (app) {
     function getURL(req, next) {
         var param = getParams(req);
         if (param.page)
-            param.page = root + '/' + param.page;
+            param.page = root + '/sites/' + param.page;
         else if (!param.page)
-            param.page = root + '/index.jade';
+            param.page = root + '/sites/index.jade';
         else
-            param.page = root + '/error.jade';
+            param.page = root + '/sites/error.jade';
 
         return param;
     }
@@ -53,7 +53,7 @@ module.exports = function (app) {
 
         if (result) {
             var data = getURL(req);
-            res.render(data.page);
+            res.render(data.page, { message: { name: 'kerem', lastname: 'yavuz' } });
         }
     }
 
