@@ -1,9 +1,5 @@
-doctype html
-html(lang="en")
-  head
-    title Hersey olabilir
-    script(type='text/javascript').
-      if (foo) bar(1 + 5)
-  body
-    h1 CONTACT
+extends _layout
 
+block content
+  include _menu
+  include contact-content

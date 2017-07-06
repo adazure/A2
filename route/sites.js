@@ -27,7 +27,6 @@ module.exports = function (app) {
         param.layout = false;
         if (param.page) {
             param.page = root + '/sites/' + param.page;
-            param.layout = true;
         }
         else if (!param.page) {
             param.page = root + '/sites/index.jade';
@@ -57,7 +56,7 @@ module.exports = function (app) {
 
         if (result) {
             var data = getURL(req);
-            res.render(data.page, { layout: data.layout });
+            res.render(data.page);
         }
     }
 
