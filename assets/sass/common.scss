@@ -5,6 +5,7 @@
 $backColor:#a9a9a9;
 $backColor2:#7fb7d8;
 $backColor3:#6490ab;
+$backColor4:#d6cec6;
 $textcolor1:#72635d;
 
 
@@ -319,13 +320,31 @@ div#worktime-container
         }
         thead{
             th{
-                background-color:#d6cec6;
+                background-color:$backColor4;
                 border-color:#fff;
+                &.arrow{
+                    position: relative;
+                    &::after{
+                        content:'';
+                        position: absolute;
+                        border:15px solid transparent;
+                    }
+                    &.arrow-down::after{
+                        position:absolute;
+                        border-top-color:$backColor4;
+                        top:100%;
+                        left:0;
+                        right:0;
+                        width:0;
+                        margin:auto;
+                    }
+                }
             }
         }
 
         tbody{
             td{
+                padding:10px;
                 &.active{
                     background-color:#f6f6f6;
                 }
