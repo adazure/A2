@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext');
+@import url('/assets/css/bootstrap.min.css');
+
+label,div,span,ul,li,ol{
+    padding:0;
+    margin:0;
+}
 body,
 html {
     padding: 0;
@@ -6,18 +12,42 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+h1.bold{
+    font-weight:bold;
+}
+
 div.context {
     width: 100%;
     max-width: 1200px;
     margin: auto;
+    &.wrap{
+        position: relative;
+    }
+    &.box{
+        padding:30px;
+    }
 }
 
+div.custom-border-dashed{
+    border-bottom:1px dashed #666;
+    box-shadow: 0 4px 20px -6px #4c4c4c;
+}
+
+
 div.header {
-    overflow: hidden;
     clear: both;
     padding: 10px;
-    color: #666;
+    color: #888;
     font-size: 20px;
+    position:relative;
+    z-index:10;
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(242,242,242,1) 100%);
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(242,242,242,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 );
+    
+    @extend .custom-border-dashed;
     div.piece {
         display: inline-block;
         vertical-align: middle;
@@ -38,14 +68,13 @@ div.header {
         label {
             display: block;
             font-weight: bold;
-            letter-spacing: -1px;
         }
     }
     div.header-club-social {
         float: right;
         label {
             display: inline-block;
-            font-size: 15px;
+            font-size: 12px;
             margin-right: 10px;
         }
         span {
@@ -73,14 +102,32 @@ div.header {
         width: 100%;
         max-width: 1200px;
         margin: auto;
-        box-shadow: 0 0 20px 10px #999;
+        box-shadow: 0 0 20px 10px #ccc;
         .item {
             display: table-cell;
+            height:500px;
+            width:100%;
+            background-size:cover;
+            background-repeat:no-repeat;
             img {
                 display: block;
                 width: 100%;
                 @extend .customcolor;
             }
         }
+    }
+}
+
+div#logo{
+    width:200px;
+    position: absolute;
+    left:40px; top:70px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    img{
+        display: block;
+        width: 100%;
+        filter:drop-shadow(0 0 20px #fff)
     }
 }

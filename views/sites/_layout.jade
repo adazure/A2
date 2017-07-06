@@ -6,17 +6,21 @@ html
       title The title
     link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type="text/css")
     link(href='/assets/css/common.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/animate.css', rel='stylesheet', type='text/css')
     script(src='/assets/js/common.js')
   body
       
       div.header
-        div.context
-          div.header-club-phone.piece 
+        div.context.wrap
+
+          div.header-club-phone.piece.animated.bounceIn 
             i.fa.fa-phone(aria-hidden="true")
             label +800-2345-6789
+
           div.header-club-name.piece
-            label CARDIFF UNIVERSITY KARATE CLUB
-          div.header-club-social.piece
+            label.animated.flipInX BURO DE VENEZUELA
+
+          div.header-club-social.piece.animated.fadeInDown
             label Social Media | Follow Us
             span
               i.fa.fa-facebook-official(aria-hidden="true")
@@ -29,5 +33,4 @@ html
       block content
 
       block footer
-      div(style='display:block')
     

@@ -24,10 +24,14 @@ module.exports = function (app) {
 
     function getURL(req, next) {
         var param = getParams(req);
-        if (param.page)
+        param.layout = false;
+        if (param.page) {
             param.page = root + '/sites/' + param.page;
-        else if (!param.page)
+            param.layout = true;
+        }
+        else if (!param.page) {
             param.page = root + '/sites/index.jade';
+        }
         else
             param.page = root + '/sites/error.jade';
 
@@ -53,7 +57,7 @@ module.exports = function (app) {
 
         if (result) {
             var data = getURL(req);
-            res.render(data.page, { message: { name: 'kerem', lastname: 'yavuz' } });
+            res.render(data.page, { layout: data.layout });
         }
     }
 
