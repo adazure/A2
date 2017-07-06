@@ -4,10 +4,43 @@ block content
     div.context.wrap.box.row
       div.col-md-6 
         h1.bold CONTACT
+        ul#contact-info
+            li.address 
+              i(class="fa fa-map-marker",aria-hidden="true") 
+              label
+                |1255 La Quinta Drive
+                |Suite 200
+                |Orlando Florida 32809
+            li.phone
+              i(class="fa fa-phone",aria-hidden="true")
+              label +800-2345-6789
+            li.fax
+              i(class="fa fa-fax",aria-hidden="true")
+              label +800-2345-6789
+            li.email
+              i(class="fa fa-envelope-o",aria-hidden="true")
+              label: a(href="mailto:info@mailserver.com") info@mailserver.com
+            li.web
+              i(class="fa fa-globe",aria-hidden="true")
+              label www.construction.com
         
 
       div.col-md-6
         h1.bold CONTACT FORM
-                  
+        div#contact-form
+              ul.row
+                li.col-md-12: label YOUR NAME &amp; LASTNAME
+                li.col-md-12: input(type="text",placeHolder="YOUR NAME & LAST NAME")
+              ul.row
+                li.col-md-6: label EMAIL ADDRESS
+                li.col-md-6: label GSM NUMBER * optional
+                li.col-md-6: input(type="text",placeHolder="GSM NUMBER")
+                li.col-md-6: input(type="text",placeHolder="EMAIL ADDRESS")
+              ul.row
+                li.col-md-12: label MESSAGE
+                li.col-md-12: textarea(placeHolder="GSM NUMBER")
+              ul.row
+                li.col-md-12: label 
+                li.col-md-12: input.btn.btn-info(type="button",value="SEND MESSAGE")
 
 

@@ -1,41 +1,53 @@
 /*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext');*/
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
 @import url('/assets/css/bootstrap.min.css');
-
 $backColor:#a9a9a9;
 $backColor2:#7fb7d8;
 $backColor3:#6490ab;
 $backColor4:#d6cec6;
 $textcolor1:#72635d;
-
-
-label,div,span,ul,li,ol,a,h1,h2,h3,h4,h5,h6{
-    padding:0;
-    margin:0;
-    list-style-type:none;
+label,
+div,
+span,
+ul,
+li,
+ol,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
     text-decoration: none !important;
 }
 
-p{
-    font-size:18px;
-    color:#666;
+p {
+    font-size: 18px;
+    color: #666;
 }
 
-h1{
-    &.title{
-        font-size:60px;
+h1 {
+    &.title {
+        font-size: 60px;
         font-weight: 300;
         text-align: center;
-        margin-bottom:30px;
+        margin-bottom: 30px;
     }
-    &.bold,&.bold2{
-        margin:30px 0;
-        color:$backColor2;
+    &.bold,
+    &.bold2 {
+        margin: 30px 0;
+        color: $backColor2;
     }
-    &.bold2{
-        font-size:20px;
+    &.bold2 {
+        font-size: 20px;
     }
 }
+
 body,
 html {
     padding: 0;
@@ -44,39 +56,39 @@ html {
     font-family: 'Quicksand', sans-serif;
 }
 
-div{
-    &.hr{
-        border-bottom:1px dashed #ccc;
-        margin:10 0;
+div {
+    &.hr {
+        border-bottom: 1px dashed #ccc;
+        margin: 10 0;
     }
 }
 
-h2.bold{
+h2.bold {
     font-size: 16px;
     padding: 3px 10px;
     background: $backColor;
     color: white;
     display: inline-block;
     border-radius: 3px;
-    &.arrow{
+    &.arrow {
         position: relative;
-        &::after{
-            content:'';
+        &::after {
+            content: '';
             position: absolute;
-            border:10px solid transparent;
+            border: 10px solid transparent;
         }
-        &.arrow-down::after{
-            position:absolute;
-            border-top-color:$backColor;
-            top:100%;
-            left:20px;
+        &.arrow-down::after {
+            position: absolute;
+            border-top-color: $backColor;
+            top: 100%;
+            left: 20px;
         }
     }
 }
 
-ul.list{
-    list-style-type:none;
-    padding:10px;    
+ul.list {
+    list-style-type: none;
+    padding: 10px;
     padding: 10px;
     border: 1px solid #eee;
 }
@@ -85,33 +97,30 @@ div.context {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-    &.wrap{
+    &.wrap {
         position: relative;
     }
-    &.box{
-        padding:100px 30px;
+    &.box {
+        padding: 100px 30px;
     }
 }
 
-div.custom-border-dashed{
-    border-bottom:1px dashed #ccc;
+div.custom-border-dashed {
+    border-bottom: 1px dashed #ccc;
     box-shadow: 0 4px 20px -6px #4c4c4c;
 }
-
 
 div.header {
     clear: both;
     padding: 10px;
     color: #888;
     font-size: 20px;
-    position:relative;
-    z-index:10;
-    background: rgb(255,255,255);
-    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(242,242,242,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(242,242,242,1) 100%);
-    background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(242,242,242,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f2f2f2',GradientType=1 );
-
+    position: relative;
+    z-index: 10;
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 1) 0%, rgba(242, 242, 242, 1) 100%);
     @extend .custom-border-dashed;
     div.piece {
         display: inline-block;
@@ -161,7 +170,7 @@ div.header {
 #club-banner-container {
     overflow: hidden;
     background-color: #f5f5f5;
-    border-bottom:1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
     .template {
         position: relative;
         display: table;
@@ -171,10 +180,10 @@ div.header {
         box-shadow: 0 0 20px 10px #ccc;
         .item {
             display: table-cell;
-            height:500px;
-            width:100%;
-            background-size:cover;
-            background-repeat:no-repeat;
+            height: 500px;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
             img {
                 display: block;
                 width: 100%;
@@ -184,101 +193,104 @@ div.header {
     }
 }
 
-div#logo{
-    width:200px;
+div#logo {
+    width: 200px;
     position: absolute;
-    left:40px; top:70px;
+    left: 40px;
+    top: 70px;
     border: 1px solid rgba(0, 0, 0, 0.08);
     background-color: rgba(0, 0, 0, 0.05);
     z-index: 100;
-    img{
+    img {
         display: block;
         width: 100%;
-        filter:drop-shadow(0 0 20px #fff)
+        filter: drop-shadow(0 0 20px #fff)
     }
 }
 
-div#inner-menu{
-    ul
-    {
+div#inner-menu {
+    ul {
         display: inline-block;
-        padding:0 35px 0 0;
+        padding: 0 35px 0 0;
         border-radius: 0 0 30px 0;
-        background-color:$backColor3;
-        li{
+        background-color: $backColor3;
+        li {
             display: inline-block;
-            border-right:1px dotted $backColor2;
+            border-right: 1px dotted $backColor2;
             position: relative;
-            &:last-child{
+            &:last-child {
                 border-right: 0;
             }
-            a{
+            a {
                 font-size: 14px;
                 color: white;
                 padding: 20px;
                 display: block;
             }
-            &.active::after{
-                content:'';
+            &.active::after {
+                content: '';
                 position: absolute;
-                border:10px solid transparent;
-                border-top-color:$backColor2;
-                top:100%;
-                left:42%;
+                border: 10px solid transparent;
+                border-top-color: $backColor2;
+                top: 100%;
+                left: 42%;
             }
-            &.active,&:hover{
-             border-radius:0 0 3px 3px;
-             background-color:$backColor2;
-             -webkit-filter:drop-shadow(0 1px 1px $backColor3);
-             filter:drop-shadow(0 1px 1px $backColor3)
+            &.active,
+            &:hover {
+                border-radius: 0 0 3px 3px;
+                background-color: $backColor2;
+                -webkit-filter: drop-shadow(0 1px 1px $backColor3);
+                filter: drop-shadow(0 1px 1px $backColor3)
             }
         }
     }
 }
 
-div#personal-container{
-    background-image:url('https://crowdcast-prod.imgix.net/-KVVl3oF5Tlh2sH5drTn/profile-cover-3819');
-    background-repeat:no-repeat;
-    background-size:cover;
+div#personal-container {
+    background-image: url('https://crowdcast-prod.imgix.net/-KVVl3oF5Tlh2sH5drTn/profile-cover-3819');
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
 }
-div#personal-list{
-    ul{
-        li{
-            padding:20px 0 ;
-            margin-bottom:50px;
+
+div#personal-list {
+    ul {
+        li {
+            padding: 20px 0;
+            margin-bottom: 50px;
             text-align: center;
-            a,img,span,h1,h2{
+            a,
+            img,
+            span,
+            h1,
+            h2 {
                 display: block;
             }
-
-            div.img{
-                overflow:hidden;
-                margin:0 auto 50px auto;
-                max-width:240px;
+            div.img {
+                overflow: hidden;
+                margin: 0 auto 50px auto;
+                max-width: 240px;
                 border-radius: 50%;
-                border:0 solid transparent;
-                transition:border .2s linear;
-                img{
-                    width:100%;
-                    filter:grayscale(100%);
+                box-shadow: 0 0 0 0 #fff;
+                transition: box-shadow .3s linear;
+                img {
+                    width: 100%;
+                    display: block;
+                    filter: grayscale(100%);
                     border-radius: 50%;
-                    transition: transform .4s linear;
+                    transition: transform .2s linear;
                 }
             }
-
-            h1.name{
-                font-size:25px;
-                color:$backColor2;
+            h1.name {
+                font-size: 25px;
+                color: $backColor2;
             }
-            
-            h2.title{
-                font-size:13px;
-                color:#b1b1b1;
-                font-weight:300;
+            h2.title {
+                font-size: 13px;
+                color: #b1b1b1;
+                font-weight: 300;
             }
-
-            a.aboutbtn{
+            a.aboutbtn {
                 cursor: pointer;
                 display: inline-block;
                 padding: 7px 34px;
@@ -286,81 +298,130 @@ div#personal-list{
                 background-color: $backColor2;
                 color: #fff;
                 margin: 16px 0;
-                &:hover{
-                    background-color:#fff;
-                    color:$backColor3;
+                &:hover {
+                    background-color: #fff;
+                    color: $backColor3;
                 }
             }
-
-            &:hover img{
-                transform:scale(1.1);
+            &:hover img {
+                transform: scale(1.1);
             }
-            &:hover div.img{
-                border-width:4px;
-                border-color:white;
+            &:hover div.img {
+                box-shadow: 0 0 0 10px #fff;
             }
         }
     }
 }
 
-div#worktime-container
-{
-    table.worktime-table{
-        border:1px solid #eee;
-        width:100%;
-        border-spacing:0;
-        td:first-child{
-            width:100px;
+div#worktime-container {
+    table.worktime-table {
+        border: 1px solid #eee;
+        width: 100%;
+        border-spacing: 0;
+        td:first-child {
+            width: 100px;
         }
-        td,th{
-            padding:22px;
-            border:1px solid #eee;
+        td,
+        th {
+            padding: 22px;
+            border: 1px solid #eee;
             text-align: center;
-            color:$textcolor1;
+            color: $textcolor1;
         }
-        thead{
-            th{
-                background-color:$backColor4;
-                border-color:#fff;
-                &.arrow{
+        thead {
+            th {
+                background-color: $backColor4;
+                border-color: #fff;
+                &.arrow {
                     position: relative;
-                    &::after{
-                        content:'';
+                    &::after {
+                        content: '';
                         position: absolute;
-                        border:15px solid transparent;
+                        border: 15px solid transparent;
                     }
-                    &.arrow-down::after{
-                        position:absolute;
-                        border-top-color:$backColor4;
-                        top:100%;
-                        left:0;
-                        right:0;
-                        width:0;
-                        margin:auto;
+                    &.arrow-down::after {
+                        position: absolute;
+                        border-top-color: $backColor4;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        width: 0;
+                        margin: auto;
                     }
                 }
             }
         }
-
-        tbody{
-            td{
-                padding:10px;
-                &.active{
-                    background-color:#f6f6f6;
+        tbody {
+            td {
+                padding: 10px;
+                &.active {
+                    background-color: #f6f6f6;
                 }
-                i{
+                i {
                     display: block;
-                    color:$textcolor1;
-                    &::before{
-                        content:'';
-                        width:7px;
-                        height:7px;
-                        background-color:#ff8810;;
+                    color: $textcolor1;
+                    &::before {
+                        content: '';
+                        width: 7px;
+                        height: 7px;
+                        background-color: #ff8810;
+                        ;
                         display: inline-block;
-                        margin-right:5px;
+                        margin-right: 5px;
                     }
                 }
             }
+        }
+    }
+}
+
+#contact-info {
+    li {
+        display: block;
+        white-space: nowrap;
+        font-size: 20px;
+        border-bottom: 1px dashed #ccc;
+        padding: 10px;
+        i,
+        label {
+            vertical-align: middle;
+            display: inline-block;
+            white-space: pre;
+            color: #444;
+        }
+        i {
+            margin-right: 40px;
+            width: 30px;
+            font-size: 30px;
+        }
+        a {
+            color: #333;
+        }
+    }
+}
+
+div#contact-form {
+    ul {
+        li {
+            label {
+                padding: 5px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            textarea,
+            input {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+            }
+            input[type=text] {
+                width: 100%;
+            }
+            textarea {
+                resize: none;
+                height: 120px;
+            }
+            input[type=button] {}
         }
     }
 }
