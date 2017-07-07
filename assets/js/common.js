@@ -9,6 +9,8 @@
     ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
     (-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)
 */
+
+
 (function () {
 
     // Sayfa üzerindeki form datalarını al
@@ -19,7 +21,7 @@
 
     // Form sayısı 0'a eşitse iptal et
     if (contactForm.length == 0) return;
-    
+
     // Form adı mutlaka contact-form olmalı, değilse iptal et
     if (contactForm[0].id != 'contact-form') return;
 
@@ -34,7 +36,8 @@
 
         // Regular expressions
         expression: {
-            email: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            email: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            gsm: /^\+{0,1}\d+$/
         },
 
         // Form içerisindeki input, textarea, button vs nesnelerin tutulduğu alan
@@ -53,7 +56,11 @@
         for (var n = 0, f = ""; n < q.length; n++) {
             f = q[n].id || q[n].name;
             if (f)
-                config.elements[f] = q[n];
+                config.elements[f] = {
+                    obj: q[n],
+                    error: q[n].getAttribute('data-err'),
+                    required: q[n].hasAttribute('required')
+                };
         }
     })(contactForm[0].elements);
 
@@ -72,15 +79,41 @@
         e.preventDefault();
 
 
+        var result = true;
+
+        // Her elemanı 'Required' özelliğine göre boş olup olmadığı kontrol ediliyor
+        // Boş alanlar için kullanıcıya uyarı mesajları gösteriyoruz
 
         (function (q) {
             Object.keys(q).forEach(function (key) {
-                if (!q[key].value && q[key].hasAttribute('required'))
-                    showTooltip(q[key], q[key].getAttribute('data-err'), !q[key].value);
+                var e = q[key];
+                if (!e.obj.value && e.required) {
+                    result = false;
+                    showTooltip(e.obj, e.error, true);
+                }
             });
         })(config.elements);
 
 
+        // Uyarı mesajları varsa, buradan sonrasını işletme
+        if (!result) return;
+
+        // Ek filtre ile, alanların tam olarak istediğimizi karşılayıp karşılamadığına bakalım
+
+        var _target = config.elements.email;
+        if (!config.expression.email.test(_target.obj.value)) {
+            showTooltip(_target.obj, _target.error, true);
+            return;
+        }
+
+        // Eğer telefon numarası girildiyse, numeric karakterler olduğundan emin olalım
+        var _target = config.elements.gsm;
+        if (_target.obj.value && !config.expression.gsm.test(_target.obj.value)) {
+            showTooltip(_target.obj, _target.error, true);
+            return;
+        }
+
+        console.log('burad');
         return false;
     }
 
