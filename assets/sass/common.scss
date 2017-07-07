@@ -409,10 +409,13 @@ div#contact-form {
                 margin: 10px 0;
             }
             textarea,
-            input {
+            input,button {
                 width: 100%;
                 box-sizing: border-box;
                 padding: 10px;
+                border-radius:5px;
+                border:1px solid #ccc;
+                outline:none;
             }
             input[type=text] {
                 width: 100%;
@@ -424,4 +427,39 @@ div#contact-form {
             input[type=button] {}
         }
     }
+}
+
+div.tooltip-container{
+    height:0px;
+    position: relative;
+    z-index: 11;
+    filter:drop-shadow(1px 1px 1px #900);
+    div.tooltip-message{
+        position: relative;
+        color:white;
+        padding:5px 10px;
+        text-align: center;
+        font-size:13px;
+        margin:2px 0;
+        background-color:red;
+        display:inline-block;
+        border-radius:3px;
+        animation:opacity .3s forwards;
+        &::after{
+            content:'';
+            border:10px solid transparent;
+            width:0;
+            border-bottom-color:red;
+            position: absolute;
+            bottom:100%;
+            left:20px;
+        }
+
+    }
+}
+
+
+@keyframes opacity{
+    from{opacity: 0}
+    to{opacity: 1}
 }

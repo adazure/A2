@@ -28,19 +28,22 @@ block content
       div.col-md-6
         h1.bold CONTACT FORM
         div#contact-form
+           form(method="POST")
               ul.row
                 li.col-md-12: label YOUR NAME &amp; LASTNAME
-                li.col-md-12: input(type="text",placeHolder="YOUR NAME & LAST NAME")
+                li.col-md-12: input(type="text", id="name", placeHolder="YOUR NAME & LAST NAME", data-err="Your name and surname is required")
               ul.row
                 li.col-md-6: label EMAIL ADDRESS
                 li.col-md-6: label GSM NUMBER * optional
-                li.col-md-6: input(type="text",placeHolder="GSM NUMBER")
-                li.col-md-6: input(type="text",placeHolder="EMAIL ADDRESS")
+                li.col-md-6: input(type="text", id="email", placeHolder="EMAIL ADDRESS", data-err="Your email is required")
+                li.col-md-6: input(type="text", id="gsm", placeHolder="GSM NUMBER")
               ul.row
                 li.col-md-12: label MESSAGE
-                li.col-md-12: textarea(placeHolder="GSM NUMBER")
+                li.col-md-12: textarea(placeHolder="YOUR MESSAGE", id="message",data-err="Please write your message")
               ul.row
                 li.col-md-12: label 
-                li.col-md-12: input.btn.btn-info(type="button",value="SEND MESSAGE")
+                li.col-md-12
+                  button.btn.btn-info(id="sendbutton") SEND MESSAGE
+                  input(type="hidden",id="hid",value="38790dy81dhbnjnasd81238a")
 
 
