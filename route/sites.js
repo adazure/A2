@@ -23,18 +23,20 @@ module.exports = function (app) {
     }
 
     function getURL(req, next) {
+
         var param = getParams(req);
-        param.layout = false;
-        if (param.page) {
-            param.page = root + '/sites/' + param.page;
+        var config = { page: param.page, site: param.site };
+        config.layout = false;
+        if (config.page) {
+            config.url = root + '/sites/' + config.page;
         }
         else if (!param.page) {
-            param.page = root + '/sites/index.jade';
+            config.url = root + '/sites/index.jade';
         }
         else
-            param.page = root + '/sites/error.jade';
-
-        return param;
+            config.url = root + '/sites/error.jade';
+            
+        return config;
     }
 
 
@@ -56,7 +58,7 @@ module.exports = function (app) {
 
         if (result) {
             var data = getURL(req);
-            res.render(data.page);
+            res.render(data.url, data);
         }
     }
 

@@ -7,6 +7,7 @@ $backColor2:#7fb7d8;
 $backColor3:#6490ab;
 $backColor4:#d6cec6;
 $textcolor1:#72635d;
+$backColor5:#c54343;
 label,
 div,
 span,
@@ -441,7 +442,7 @@ div.tooltip-container{
         text-align: center;
         font-size:13px;
         margin:2px 0;
-        background-color:red;
+        background-color:$backColor5;
         display:inline-block;
         border-radius:3px;
         animation:opacity .3s forwards;
@@ -449,7 +450,7 @@ div.tooltip-container{
             content:'';
             border:10px solid transparent;
             width:0;
-            border-bottom-color:red;
+            border-bottom-color:$backColor5;
             position: absolute;
             bottom:100%;
             left:20px;
