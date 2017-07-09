@@ -1,0 +1,11 @@
+$btncolor:#60bbce;
+$white:white;
+.button {
+    padding: 5px 10px;
+    &.other-page {
+        padding: 10px 30px;
+        background-color: $btncolor;
+        color: $white;
+        font-weight: bold;
+    }
+}

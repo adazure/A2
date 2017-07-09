@@ -37,6 +37,20 @@ a {
     &:hover {
         cursor: pointer;
     }
+    &.main {
+        padding: 10px 30px;
+        border-radius: 40px;
+        background-color: #448daf;
+    }
+    &.detail {
+        font-size: 20px;
+        text-decoration: underline !important;
+        background-color: #333;
+        display: inline-block;
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
 }
 
 h1 {
@@ -68,6 +82,10 @@ div {
     &.hr {
         border-bottom: 1px dashed #ccc;
         margin: 10 0;
+    }
+    &.other {
+        text-align: center;
+        margin: 20px 0;
     }
 }
 
@@ -109,7 +127,7 @@ div.context {
         position: relative;
     }
     &.box {
-        padding: 100px 30px;
+        padding: 60px 30px;
     }
     &.special {
         height: 0;
@@ -506,38 +524,38 @@ div#googlemap {
 }
 
 div#worktime-mini {
-    border:1px solid #eee;
+    border: 1px solid #eee;
     label {
         font-weight: normal;
     }
     div.item {
         background-color: $backColor4;
         display: inline-block;
-        margin:0 0 10px 0;
-        width:140px;
+        margin: 0 0 10px 0;
+        width: 140px;
         label.day-name {
             display: block;
             padding: 5px 10px;
-            font-weight:bold;
+            font-weight: bold;
             color: $textcolor1;
-            text-align:center;
+            text-align: center;
         }
         @extend .down-arr;
     }
     div.day-item {
         border-bottom: 1px solid #ddd;
-        display:table;
-        width:100%;
+        display: table;
+        width: 100%;
         label.time,
         label.comment {
             display: table-cell;
             padding: 10px;
-            white-space:normal;
-            vertical-align:top;
+            white-space: normal;
+            vertical-align: top;
         }
         label.time {
             font-weight: bold;
-            width:50px;
+            width: 50px;
         }
         label.comment {
             font-style: italic;
@@ -552,5 +570,24 @@ div#worktime-mini {
     }
     to {
         opacity: 1
+    }
+}
+
+div#news-container {
+    padding: 20px 0;
+    ul {
+        li.news-item {
+            margin: 10px 0 40px 0;
+            div.date {
+                font-size: 16px;
+                font-weight: bold;
+                color: #487fa0;
+            }
+            div.text {
+                font-style: italic;
+                margin: 10px 0;
+                font-size: 18px;
+            }
+        }
     }
 }
