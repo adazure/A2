@@ -1,7 +1,7 @@
 var path = require("path");
 var fs = require("fs");
 var root = path.resolve('views');
-module.exports = function (app) {
+module.exports = function(app) {
 
 
     // Queryden gelen parametreleri alıyoruz
@@ -9,7 +9,7 @@ module.exports = function (app) {
         var param = req.params;
 
         // Bizim belirlediğimiz parametreler
-        return { site: param.sitename, page: param.pagename };
+        return { site: param.sitename, page: param.pagename, id: param.id };
     }
 
     // Gelen query bilgisi, yani sitename eğer bazı kelimeleri içeriyorsa NEXT() diyip devam edeceğiz, değilse kontrole sokacağız
@@ -25,17 +25,15 @@ module.exports = function (app) {
     function getURL(req, next) {
 
         var param = getParams(req);
-        var config = { page: param.page, site: param.site };
+        var config = { page: param.page, site: param.site, id: param.id };
         config.layout = false;
         if (config.page) {
             config.url = root + '/sites/' + config.page;
-        }
-        else if (!param.page) {
+        } else if (!param.page) {
             config.url = root + '/sites/index.jade';
-        }
-        else
+        } else
             config.url = root + '/sites/error.jade';
-            
+
         return config;
     }
 
@@ -44,15 +42,14 @@ module.exports = function (app) {
     function callback(req, res, next) {
 
         // Eğer özel dosya yolları varsa
-        var result = isFilter(req, function (param) {
+        var result = isFilter(req, function(param) {
 
             var n = path.resolve(param.site + '/' + param.page);
 
             // Gelen dosyanın yolunu kontrol ederek. Aradığı dosyayı veya sayfayı bulamadığında özel bir uyarı sayfası gösterelim
             if (!fs.existsSync(n)) {
                 res.render('nofile');
-            }
-            else
+            } else
                 res.sendFile(n);
         });
 

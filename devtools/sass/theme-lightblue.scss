@@ -1,4 +1,5 @@
 $color1:#60bbce;
+$color2:#4e9bab;
 $white:white;
 $lightgray:#eee;
 .button {
@@ -123,6 +124,44 @@ th {
             right: 0;
             width: 0;
             margin: auto;
+        }
+    }
+}
+
+div#inner-menu {
+    ul {
+        display: block;
+        padding: 0 35px 0 0;
+        background-color: $color1;
+        li {
+            display: inline-block;
+            border-right: 1px dotted $color2;
+            position: relative;
+            font-weight: bold;
+            &:last-child {
+                border-right: 0;
+            }
+            a {
+                font-size: 14px;
+                color: white;
+                padding: 20px;
+                display: block;
+            }
+            &.active::after {
+                content: '';
+                position: absolute;
+                border: 10px solid transparent;
+                border-top-color: $color1;
+                top: 100%;
+                left: 42%;
+            }
+            &.active,
+            &:hover {
+                border-radius: 0 0 3px 3px;
+                background-color: $color1;
+                -webkit-filter: drop-shadow(0 1px 1px $color1);
+                filter: drop-shadow(0 1px 1px $color1)
+            }
         }
     }
 }

@@ -2,7 +2,10 @@ var express = require("express");
 var app = express();
 var parser = require("body-parser");
 var fs = require('fs');
+var error = require("./route/error")(app);
+var site = require("./route/site")(app);
 var home = require("./route/home")(app);
+var personal = require("./route/personal")(app);
 var sites = require("./route/sites")(app);
 var path = require("path");
 // Middleware
