@@ -53,23 +53,6 @@ a {
     }
 }
 
-h1 {
-    &.title {
-        font-size: 60px;
-        font-weight: 300;
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    &.bold,
-    &.bold2 {
-        margin: 30px 0;
-        color: $backColor2;
-    }
-    &.bold2 {
-        font-size: 20px;
-    }
-}
-
 body,
 html {
     padding: 0;
@@ -231,6 +214,7 @@ div#logo {
     border: 1px solid rgba(0, 0, 0, 0.08);
     background-color: rgba(0, 0, 0, 0.05);
     z-index: 100;
+    padding: 10px;
     img {
         display: block;
         width: 100%;
@@ -289,13 +273,6 @@ div#personal-list {
             padding: 20px 0;
             margin-bottom: 50px;
             text-align: center;
-            a,
-            img,
-            span,
-            h1,
-            h2 {
-                display: block;
-            }
             div.img {
                 overflow: hidden;
                 margin: 0 auto 50px auto;
@@ -320,19 +297,6 @@ div#personal-list {
                 color: #b1b1b1;
                 font-weight: 300;
             }
-            a.aboutbtn {
-                cursor: pointer;
-                display: inline-block;
-                padding: 7px 34px;
-                border-radius: 20px;
-                background-color: $backColor2;
-                color: #fff;
-                margin: 16px 0;
-                &:hover {
-                    background-color: #fff;
-                    color: $backColor3;
-                }
-            }
             &:hover img {
                 transform: scale(1.1);
             }
@@ -343,44 +307,20 @@ div#personal-list {
     }
 }
 
-.down-arr {
-    &.arrow {
-        position: relative;
-        &::after {
-            content: '';
-            position: absolute;
-            border: 15px solid transparent;
-        }
-        &.arrow-down::after {
-            position: absolute;
-            border-top-color: $backColor4;
-            top: 100%;
-            left: 0;
-            right: 0;
-            width: 0;
-            margin: auto;
-        }
-    }
-}
-
 div#worktime-container {
     table.worktime-table {
         border: 1px solid #eee;
         width: 100%;
         border-spacing: 0;
-        td:first-child {}
         td,
         th {
             padding: 22px 4px;
             border: 1px solid #eee;
             text-align: center;
-            color: $textcolor1;
             width: 12%;
-            @extend .down-arr;
         }
         thead {
             th {
-                background-color: $backColor4;
                 border-color: #fff;
             }
         }
@@ -540,7 +480,6 @@ div#worktime-mini {
             color: $textcolor1;
             text-align: center;
         }
-        @extend .down-arr;
     }
     div.day-item {
         border-bottom: 1px solid #ddd;

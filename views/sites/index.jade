@@ -5,12 +5,18 @@ block title
   
 
 block content 
-  div#club-banner-container
-    div.context.wrap.special
-      div#logo.animated.zoomInDown
-        img(src="https://www.deluxe.com/sites/www.deluxe.com/files/logo_design/logo/logo-samples-34-300x300.png",alt="Bufalo",title="Click for Home Page")
-    div.template
-      div.item.animated.fadeIn(style="background-image:url('assets/images/computer-1149148_1920.jpg')")
+  div.context.wrap: div#logo.animated.flipInY: img(src="/assets/images/logo.png")
+  div.slide-container
+    div.slide-template
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-2.jpg')
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-1.jpg')
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-4.jpg')
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-3.jpg')
+
 
   div.context.wrap.box.row
     div.col-md-6: include news-content
