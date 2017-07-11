@@ -1,0 +1,20 @@
+extends _layout
+
+block content
+        div#personal-container
+                div.personal.template.context.row
+                        div.personal.col-md-4
+                                div.personal.image.animated.flipInY: img(src=image)
+                                div.personal.name: label #{name}
+                                div.personal.title: label #{title}
+                                div.personal.degree: label #{degree}
+                        
+                        div.personal.description.col-md-8
+                                h1.title About
+                                label !{description}
+
+                                div.rewards
+                                        h1.title Awards
+                                        ul.awards
+                                                each item in awards
+                                                        li= item 

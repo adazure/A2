@@ -32,6 +32,8 @@ module.exports = function(app) {
                 app.set('views', _path);
                 res.render(_path + '/index.jade');
             }
+            // Static sayfalarda var mı kontrol et
+
             // Aranılan sayfa yoksa hata sayfasına düşsün
             else if (!sites[req.params.sitename] && !req.params.pagename) {
                 app.set('views', _path);
@@ -46,6 +48,7 @@ module.exports = function(app) {
 
     }
 
+    app.get('/:sitename/:pagename/:id', control);
     app.get('/:sitename/:pagename', control);
     app.get('/:sitename', control);
     app.get('/', control);

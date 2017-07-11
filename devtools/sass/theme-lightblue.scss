@@ -2,6 +2,10 @@ $color1:#60bbce;
 $color2:#4e9bab;
 $white:white;
 $lightgray:#eee;
+p {
+    margin: 10px 0;
+}
+
 .button {
     padding: 5px 10px;
     &.other-page {
@@ -161,6 +165,65 @@ div#inner-menu {
                 background-color: $color1;
                 -webkit-filter: drop-shadow(0 1px 1px $color1);
                 filter: drop-shadow(0 1px 1px $color1)
+            }
+        }
+    }
+}
+
+div.personal.template {
+    padding: 100px 40px;
+    label {
+        font-weight: normal;
+    }
+    div.personal {
+        text-align: center;
+        vertical-align: top;
+    }
+    div.personal.image {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: inline-block;
+        img {
+            display: block;
+            width: 100%;
+        }
+        &::after {
+            content: '';
+            position: relative;
+            box-shadow: 0 0 10px 10px #000;
+            width: 30px;
+            height: 2px;
+        }
+    }
+    div.personal.name {
+        font-size: 35px;
+        margin: 10px 0;
+    }
+    div.personal.title {
+        font-size: 16px;
+        font-weight: bold !important;
+    }
+    div.personal.degree {
+        font-size: 23px;
+    }
+    div.personal.description {
+        font-size: 19px;
+        color: #333;
+        text-align: left;
+    }
+    ul.awards {
+        h1 {}
+        li {
+            &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                display: inline-block;
+                margin-right: 10px;
+                vertical-align: middle;
+                background-color: $color1;
             }
         }
     }
