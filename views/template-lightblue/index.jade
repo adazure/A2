@@ -1,0 +1,31 @@
+extends ./_layout
+
+block title  
+  title Welcome to BURO DE VENEZUELA
+  
+
+block content 
+  div.context.wrap: div#logo.animated.flipInY: img(src="/assets/images/logo.png")
+  div.slide-container
+    div.slide-template
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-2.jpg')
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-1.jpg')
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-4.jpg')
+      div.slide-item
+        img(src='http://www.slidesjs.com/img/example-slide-350-3.jpg')
+
+
+  div.context.wrap.box.row
+    div.col-md-6: include news-content
+
+  div.hr
+  include about-content
+  div.hr
+  include personal-content
+  div.hr
+  include worktime-content
+  div.hr
+  include contact-content

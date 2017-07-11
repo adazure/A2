@@ -3,7 +3,6 @@ var fs = require("fs");
 var root = path.resolve('views');
 module.exports = function(app) {
 
-
     // Queryden gelen parametreleri alıyoruz
     function getParams(req) {
         var param = req.params;
@@ -28,11 +27,11 @@ module.exports = function(app) {
         var config = { page: param.page, site: param.site, id: param.id };
         config.layout = false;
         if (config.page) {
-            config.url = root + '/sites/' + config.page;
+            config.url = root + '/' + config.page;
         } else if (!param.page) {
-            config.url = root + '/sites/index.jade';
+            config.url = root + '/index.jade';
         } else
-            config.url = root + '/sites/error.jade';
+            config.url = root + '/error.jade';
 
         return config;
     }

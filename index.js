@@ -4,15 +4,12 @@ var parser = require("body-parser");
 var fs = require('fs');
 var error = require("./route/error")(app);
 var site = require("./route/site")(app);
-var home = require("./route/home")(app);
 var personal = require("./route/personal")(app);
-var sites = require("./route/sites")(app);
 var path = require("path");
 // Middleware
 
 app.use('/assets', express.static('assets'));
 app.set('view options', { layout: false });
-app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade')
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
