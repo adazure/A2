@@ -213,6 +213,15 @@ div.personal.template {
         color: #333;
         text-align: left;
     }
+    div.personal.social {
+        margin: 20px 0;
+        i {
+            display: inline-block;
+            font-size: 30px;
+            color: #444;
+            margin: 0 10px;
+        }
+    }
     ul.awards {
         li {
             &::before {

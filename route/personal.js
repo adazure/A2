@@ -22,7 +22,7 @@ module.exports = function(app) {
         res.render('personal-detail', data);
     })
     app.get('/:sitename/personal', function(req, res) {
-        res.render('personal');
+        res.render('personal', { url: req.url + '/' });
     })
 
 }
