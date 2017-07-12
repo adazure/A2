@@ -2,9 +2,11 @@ $color1:#60bbce;
 $color2:#4e9bab;
 $white:white;
 $lightgray:#eee;
+body {
+}
+
 p {
     margin: 10px 0;
-    font-size:17px;
 }
 
 .button {
@@ -84,6 +86,7 @@ div {
     &.page-buttons {
         margin: 80px 0 10px 0;
         text-align: center;
+        font-size: 15px;
     }
     &.link-buttons {
         text-align: center;
@@ -134,7 +137,7 @@ th {
 }
 
 div#inner-menu {
-    background-color:#60bbce;
+    background-color: #60bbce;
     ul {
         display: block;
         padding: 0 35px 0 0;
@@ -187,7 +190,7 @@ div.personal.template {
         border-radius: 50%;
         overflow: hidden;
         display: inline-block;
-        box-shadow:0 0 0 10px #fff;
+        box-shadow: 0 0 0 10px #fff;
         img {
             display: block;
             width: 100%;
