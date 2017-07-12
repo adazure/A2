@@ -240,7 +240,7 @@ var lang = {
         news: { title: 'NEWS', url: 'news' },
         contact: { title: 'CONTACT', url: 'contact' },
         gallery: { title: 'GALLERY', url: 'gallery' },
-        personal: { title: 'PERSONALS', url: 'personals' },
+        personal: { title: 'PERSONALS', url: 'personal' },
         athletes: { title: 'ATHLETES', url: 'athletes' },
         about: { title: 'ABOUT US', url: 'about' },
         aboutread: 'ABOUT'
