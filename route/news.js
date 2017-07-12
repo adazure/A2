@@ -1,8 +1,6 @@
-var lang = require("./lang");
-
 module.exports = function(app) {
 
-    app.get('/:controller/:action/:id', function(req, res) {
+    app.get('/:sitename/news/:id', function(req, res) {
         var data = {
             name: 'John Steinbeck',
             age: new Date(1984, 01, 14),
@@ -23,7 +21,7 @@ module.exports = function(app) {
         };
         res.render('personal-detail', data);
     })
-    app.get('/:sitename/personal', function(req, res) {
+    app.get('/:sitename/news', function(req, res) {
         res.render('personal', { pathURL: '/' + req.params.sitename });
     })
 

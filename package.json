@@ -20,6 +20,7 @@
   "homepage": "https://github.com/adazure/A2#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "connect-timeout": "^1.9.0",
     "express": "^4.15.3",
     "fs": "0.0.1-security",
     "jade": "^1.11.0",

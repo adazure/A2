@@ -4,10 +4,10 @@ block content
         div#personal-container
                 div.personal.template.context.row
                         div.personal.col-md-4
-                                div.personal.image.animated.flipInY: img(src=image)
-                                div.personal.name: label #{name}
-                                div.personal.title: label #{title}
-                                div.personal.degree: label #{degree}
+                                div.personal.image.animated.flipInY: img(src=result.image)
+                                div.personal.name: label #{result.name}
+                                div.personal.title: label #{result.title}
+                                div.personal.degree: label #{result.degree}
                                 div.personal.social
                                         a: i.fa.fa-facebook-official(aria-hidden="true")
                                         a: i.fa.fa-twitter(aria-hidden="true")
@@ -16,10 +16,10 @@ block content
                         
                         div.personal.description.col-md-8
                                 h1.title About
-                                label !{description}
+                                label !{result.description}
 
                                 div.rewards
                                         h1.title Awards
                                         ul.awards
-                                                each item in awards
+                                                each item in result.awards
                                                         li= item 

@@ -4,6 +4,7 @@ $white:white;
 $lightgray:#eee;
 p {
     margin: 10px 0;
+    font-size:17px;
 }
 
 .button {
@@ -133,6 +134,7 @@ th {
 }
 
 div#inner-menu {
+    background-color:#60bbce;
     ul {
         display: block;
         padding: 0 35px 0 0;

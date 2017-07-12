@@ -1,8 +1,9 @@
-div#inner-menu.context
-    ul
-        li: a(href="#") HOME PAGE
-        li.active: a(href="#") ABOUT US
-        li: a(href="#") ATHLETES
-        li: a(href="#") NEWS
-        li: a(href="#") GALLERY
-        li: a(href="#") CONTACT
+div#inner-menu
+    div.context
+        ul
+            li: a(href=pathController) HOME PAGE
+            li.active: a(href=pathController + '/' + lang.about.url) #{lang.about.title}
+            li: a(href=pathController + '/' + lang.athletes.url) #{lang.athletes.title}
+            li: a(href=pathController + '/' + lang.news.url) #{lang.news.title}
+            li: a(href=pathController + '/' + lang.gallery.url) #{lang.gallery.title}
+            li: a(href=pathController + '/' + lang.contact.url) #{lang.contact.title}

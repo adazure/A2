@@ -1,6 +1,5 @@
 /*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=latin-ext');*/
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
 @import url('/assets/css/bootstrap.min.css');
 $backColor:#a9a9a9;
 $backColor2:#7fb7d8;
@@ -456,7 +455,7 @@ div#googlemap {
     height: 500px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow:0 0 0 5px rgba(165, 165, 165, 0.15);
+    box-shadow: 0 0 0 5px rgba(165, 165, 165, 0.15);
 }
 
 div#worktime-mini {
@@ -526,3 +525,5 @@ div#news-container {
         }
     }
 }
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
