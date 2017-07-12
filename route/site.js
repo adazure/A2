@@ -1,7 +1,6 @@
 //(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)
 
 var sites = require("./demo");
-var path = require("path");
 var lang = require("./lang");
 
 //(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)(-)
