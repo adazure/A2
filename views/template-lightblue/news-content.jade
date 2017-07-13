@@ -1,40 +1,41 @@
 block content
     div#news-container
-        div.context.wrap.row.box
-            div.col-md-6
-                h1.page-title: span Our News
-                div
-                    ul 
-                        li.news-item.row
-                            div.image.col-sm-4: img(src="/assets/images/news/news1.jpg")
-                            div.news-content.col-sm-8
-                                div.date 10.01.2001 11:12:23
-                                div.text Scientists have likened the icy Glacier Bay to a living laboratory due to the park's glacial retreat, plant succession, and animal behavior.
-                                div.read: a.mini-btn.more(href="javascript:;") Read More
-                      
-                        li.news-item.row
-                            div.image.col-sm-4: img(src="/assets/images/news/news1.jpg")
-                            div.news-content.col-sm-8
-                                div.date 10.01.2001 11:12:23
-                                div.text Scientists have likened the icy Glacier Bay to a living laboratory due to the park's glacial retreat, plant succession, and animal behavior.
-                                div.read: a.mini-btn.more(href="javascript:;") Read More
-                      
-                      
-                    div.link-buttons
-                        a.link.reverse.more(href="#") Other Headlines
-            
-            div.col-md-6
-                h1.page-title: span Our Services
-                div#main-Services
-                    div.item.col-md-6
-                        h1.title: span FITNESS
-                        div.image: img(src="/assets/images/fitness.jpg")
-                    div.item.col-md-6
-                        h1.title: span CAR SERVICE
-                        div.image: img(src="/assets/images/carservice.jpg")
-                    div.item.col-md-6
-                        h1.title: span RESTAURANT
-                        div.image: img(src="/assets/images/restaurant.jpg")
-                    div.item.col-md-6
-                        h1.title: span PRIVATE LESSON
-                        div.image: img(src="/assets/images/private-lesson.jpg")
+        div.container.box
+            div.row
+                div.col-md-6
+                    h1.page-title: span Our News
+                    div
+                        ul 
+                            li.news-item.row
+                                div.image.col-sm-4: img(src="/assets/images/news/news1.jpg")
+                                div.news-content.col-sm-8
+                                    div.date 10.01.2001 11:12:23
+                                    div.text Scientists have likened the icy Glacier Bay to a living laboratory due to the park's glacial retreat, plant succession, and animal behavior.
+                                    div.read: a.mini-btn.more(href="javascript:;") Read More
+                        
+                            li.news-item.row
+                                div.image.col-sm-4: img(src="/assets/images/news/news1.jpg")
+                                div.news-content.col-sm-8
+                                    div.date 10.01.2001 11:12:23
+                                    div.text Scientists have likened the icy Glacier Bay to a living laboratory due to the park's glacial retreat, plant succession, and animal behavior.
+                                    div.read: a.mini-btn.more(href="javascript:;") Read More
+                        
+                        
+                        div.link-buttons
+                            a.link.reverse.more(href=pathController + '/' + lang.news.url) Other Headlines
+                
+                div.col-md-6
+                    h1.page-title: span Our Services
+                    div#main-Services.row
+                        div.item.col-sm-6
+                            h1.title: span FITNESS
+                            div.image: img(src="/assets/images/fitness.jpg")
+                        div.item.col-sm-6
+                            h1.title: span CAR SERVICE
+                            div.image: img(src="/assets/images/carservice.jpg")
+                        div.item.col-sm-6
+                            h1.title: span RESTAURANT
+                            div.image: img(src="/assets/images/restaurant.jpg")
+                        div.item.col-sm-6
+                            h1.title: span PRIVATE LESSON
+                            div.image: img(src="/assets/images/private-lesson.jpg")

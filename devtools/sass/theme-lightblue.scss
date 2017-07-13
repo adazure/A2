@@ -31,6 +31,11 @@ body {
     font-weight: 300;
 }
 
+hr {
+    border: 0;
+    margin: 50px 0;
+}
+
 .text {
     font-size: 16px;
 }
@@ -72,7 +77,7 @@ h2,
 h3 {
     &.title {
         color: $color1;
-        margin: 20px 0;
+        margin: 10px 0;
     }
 }
 
@@ -87,6 +92,7 @@ h1 {
     &.page-title {
         font-size: 50px;
         text-align: center;
+        margin: 30px 0 30px 0;
         span {
             border-bottom: 4px solid #dedede;
             display: inline-block;
@@ -139,7 +145,7 @@ a {
 
 div {
     &.page-buttons {
-        margin: 80px 0 10px 0;
+        margin: 40px 0 10px 0;
         text-align: center;
         font-size: 15px;
     }
@@ -236,8 +242,8 @@ div.personal.template {
         vertical-align: top;
     }
     div.personal.image {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
         border-radius: 50%;
         overflow: hidden;
         display: inline-block;
@@ -372,15 +378,12 @@ div#personal-list {
                 box-shadow: 0 11px 17px -16px #000;
                 height: 34px;
                 font-weight: bold;
-                span {
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
+                span {}
             }
             h2.title {
                 font-size: 15px;
-                color: #b1b1b1;
+                color: #666;
+                font-weight: bold;
             }
             &:hover img {
                 transform: scale(1.1);
@@ -394,17 +397,18 @@ div#personal-list {
 
 #contact-info {
     li {
-        display: block;
+        display: table;
         white-space: nowrap;
         font-size: 17px;
         border-bottom: 1px dashed #ccc;
         padding: 10px;
+        width: 100%;
         i,
-        label {
+        span {
             vertical-align: middle;
             font-weight: normal;
-            display: inline-block;
-            white-space: pre;
+            display: table-cell;
+            white-space: normal;
             color: #444;
         }
         i {
@@ -417,7 +421,7 @@ div#personal-list {
                 width: 4px;
                 height: 4px;
                 position: absolute;
-                right: 0;
+                right: 10px;
                 top: 0;
                 bottom: 0;
                 margin: auto;
@@ -558,6 +562,7 @@ div#worktime-container {
         border: 1px solid #eee;
         width: 100%;
         border-spacing: 0;
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.05);
         td,
         th {
             padding: 22px 4px;
@@ -625,8 +630,8 @@ div#worktime-container {
             div {}
             text-align: center;
             .image {
-                width: 200px;
-                height: 200px;
+                width: 150px;
+                height: 150px;
                 display: inline-block;
                 border-radius: 50%;
                 overflow: hidden;

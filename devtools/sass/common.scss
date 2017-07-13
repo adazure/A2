@@ -96,19 +96,16 @@ ul.list {
     border: 1px solid #eee;
 }
 
-div.context {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    &.wrap {
-        position: relative;
-    }
-    &.box {
-        padding: 60px 30px;
-    }
-    &.special {
-        height: 0;
-    }
+.wrap {
+    position: relative;
+}
+
+.box {
+    padding: 30px;
+}
+
+.special {
+    height: 0;
 }
 
 div.custom-border-dashed {
