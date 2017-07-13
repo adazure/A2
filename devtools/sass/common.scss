@@ -352,46 +352,6 @@ div#googlemap {
     box-shadow: 0 0 0 5px rgba(165, 165, 165, 0.15);
 }
 
-div#worktime-mini {
-    border: 1px solid #eee;
-    label {
-        font-weight: normal;
-    }
-    div.item {
-        background-color: $backColor4;
-        display: inline-block;
-        margin: 0 0 10px 0;
-        width: 140px;
-        label.day-name {
-            display: block;
-            padding: 5px 10px;
-            font-weight: bold;
-            color: $textcolor1;
-            text-align: center;
-        }
-    }
-    div.day-item {
-        border-bottom: 1px solid #ddd;
-        display: table;
-        width: 100%;
-        label.time,
-        label.comment {
-            display: table-cell;
-            padding: 10px;
-            white-space: normal;
-            vertical-align: top;
-        }
-        label.time {
-            font-weight: bold;
-            width: 50px;
-        }
-        label.comment {
-            font-style: italic;
-            font-size: 13px;
-        }
-    }
-}
-
 @keyframes opacity {
     from {
         opacity: 0
