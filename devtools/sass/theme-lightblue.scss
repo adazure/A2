@@ -4,6 +4,7 @@ $white:white;
 $lightgray:#eee;
 body {
     font-size: 15px;
+    color: #666;
 }
 
 p {
@@ -53,8 +54,8 @@ h1 {
 
 h2 {
     font-size: 23px;
-    &.title{
-        font-size:30px;
+    &.title {
+        font-size: 30px;
     }
 }
 
@@ -122,7 +123,8 @@ th {
 }
 
 .down-arr {
-    &.arrow {
+    
+    .arrow {
         position: relative;
         &::after {
             content: '';
@@ -246,4 +248,9 @@ div.personal.template {
             }
         }
     }
+}
+
+#news-container {
+    background-color:#fdfdfd;
+    background-size:cover;
 }
