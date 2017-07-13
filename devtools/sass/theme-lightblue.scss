@@ -32,10 +32,10 @@ a {
         background-color: $color1;
         color: white;
         display: inline-block;
-        border-radius:2px;
-        font-size:13px;
-        &:active{
-            background-color:$color2;
+        border-radius: 2px;
+        font-size: 13px;
+        &:active {
+            background-color: $color2;
         }
     }
 }
@@ -303,8 +303,7 @@ div#news-container {
                     font-style: italic;
                     margin: 10px 0;
                 }
-                div.read {
-                }
+                div.read {}
             }
         }
     }
