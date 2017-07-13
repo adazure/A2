@@ -337,7 +337,8 @@ div#news-container {
     }
 }
 
-div#personal-container {
+div#personal-container,
+div#athletes-container {
     background-image: url('https://crowdcast-prod.imgix.net/-KVVl3oF5Tlh2sH5drTn/profile-cover-3819');
     background-repeat: no-repeat;
     background-size: cover;
@@ -629,6 +630,8 @@ div#worktime-container {
                 display: inline-block;
                 border-radius: 50%;
                 overflow: hidden;
+                box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.73);
+                margin-bottom: 20px;
                 img {
                     width: 100%;
                     display: block;
