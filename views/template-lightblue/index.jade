@@ -5,21 +5,9 @@ block title
   
 
 block content 
-  div.context.wrap: div#logo.animated.flipInY: img(src="/assets/images/logo.png")
-  div.slide-container
-    div.slide-template
-      div.slide-item
-        img(src='/assets/images/banners/example-slide-350-2.jpg')
-      div.slide-item
-        img(src='/assets/images/banners/example-slide-350-1.jpg')
-      div.slide-item
-        img(src='/assets/images/banners/example-slide-350-4.jpg')
-      div.slide-item
-        img(src='/assets/images/banners/example-slide-350-3.jpg')
+  include banner
 
-
-  div.context.wrap.box.row
-    div.col-md-6: include news-content
+  include news-content
 
   div.hr
   include about-content

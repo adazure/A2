@@ -4,10 +4,10 @@ var concat = require("gulp-concat");
 var sourcemaps = require('gulp-sourcemaps');
 
 var scriptpath = './devtools/scripts/**/*.js';
-gulp.task('script',function(){
+gulp.task('script', function() {
     return gulp.src(scriptpath)
-    .pipe(concat('common.js'))
-    .pipe(gulp.dest('./assets/js'));
+        .pipe(concat('common.js'))
+        .pipe(gulp.dest('./assets/js'));
 });
 
 var sasspath = './devtools/sass/**/*.scss';
@@ -19,7 +19,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./assets/css/'));
 });
 
-gulp.task('default', function() {
+gulp.task('default', ['sass', 'script'], function() {
     gulp.watch(sasspath, ['sass']);
     gulp.watch(scriptpath, ['script']);
 });
