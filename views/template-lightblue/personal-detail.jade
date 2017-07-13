@@ -5,9 +5,9 @@ block content
                 div.personal.template.context.row
                         div.personal.col-md-4
                                 div.personal.image.animated.flipInY: img(src=result.image)
-                                div.personal.name: label #{result.name}
-                                div.personal.title: label #{result.title}
-                                div.personal.degree: label #{result.degree}
+                                div.personal.name: span #{result.name}
+                                div.personal.title: span #{result.title}
+                                div.personal.degree: span #{result.degree}
                                 div.personal.social
                                         a: i.fa.fa-facebook-official(aria-hidden="true")
                                         a: i.fa.fa-twitter(aria-hidden="true")
@@ -16,7 +16,7 @@ block content
                         
                         div.personal.description.col-md-8
                                 h1.title About
-                                label !{result.description}
+                                div !{result.description}
 
                                 div.rewards
                                         h1.title Awards

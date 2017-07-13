@@ -1,15 +1,42 @@
 $color1:#60bbce;
 $color2:#4e9bab;
+$backColor:#a9a9a9;
+$backColor2:#7fb7d8;
+$backColor3:#6490ab;
+$backColor4:#d6cec6;
+$textcolor1:#72635d;
+$backColor5:#c54343;
 $white:white;
 $lightgray:#eee;
+$placeholder:#999;
+::-webkit-input-placeholder {
+    color: $placeholder;
+}
+
+::-moz-placeholder {
+    color: $placeholder;
+}
+
+:-ms-input-placeholder {
+    color: $placeholder;
+}
+
+:-moz-placeholder {
+    color: $placeholder;
+}
+
 body {
     font-size: 15px;
     color: #666;
+    font-weight: 300;
+}
+
+.text {
+    font-size: 16px;
 }
 
 p {
     margin: 10px 0;
-    font-size: 18px;
 }
 
 .button {
@@ -114,7 +141,6 @@ div {
             display: inline-block;
             background-color: #eee;
             padding: 4px 10px;
-            font-weight: bold;
             &:hover {
                 background-color: $color1;
                 color: $white;
@@ -197,9 +223,6 @@ div#inner-menu {
 
 div.personal.template {
     padding: 100px 40px;
-    label {
-        font-weight: normal;
-    }
     div.personal {
         text-align: center;
         vertical-align: top;
@@ -224,8 +247,8 @@ div.personal.template {
         }
     }
     div.personal.name {
-        font-size: 35px;
-        margin: 10px 0;
+        font-size: 30px;
+        margin: 40px 0 0 0;
     }
     div.personal.title {
         font-size: 16px;
@@ -235,8 +258,7 @@ div.personal.template {
         font-size: 23px;
     }
     div.personal.description {
-        font-size: 19px;
-        color: #333;
+        font-size: 18px;
         text-align: left;
     }
     div.personal.social {
@@ -263,33 +285,30 @@ div.personal.template {
     }
 }
 
-#news-container {
-    background-color: #fdfdfd;
-    background-size: cover;
-}
-
 #contact-social-media {
     text-align: center;
 }
 
 div#news-container {
     padding: 20px 0;
+    background-color: #fefefe;
     ul {
         li.news-item {
             clear: both;
             margin: 10px 0;
-            border-bottom: 1px dashed #ddd;
-            padding: 17px 0;
+            box-shadow: 0 20px 39px -38px #000;
+            padding: 27px 0;
             overflow: hidden;
+            &:last-child {
+                margin-bottom: 30px;
+            }
             div.image {
-                float: left;
-                width: 193px;
                 vertical-align: top;
-                margin: 0 10px 10px;
+                margin-bottom: 20px;
                 img {
                     display: block;
                     width: 100%;
-                    filter:grayscale(50%);
+                    filter: grayscale(50%);
                 }
             }
             div.news-content {
@@ -298,7 +317,7 @@ div#news-container {
                 div.date {
                     font-size: 16px;
                     font-weight: bold;
-                    color: #487fa0;
+                    color: #777;
                 }
                 div.text {
                     font-style: italic;
@@ -306,6 +325,147 @@ div#news-container {
                 }
                 div.read {}
             }
+        }
+    }
+}
+
+div#personal-container {
+    background-image: url('https://crowdcast-prod.imgix.net/-KVVl3oF5Tlh2sH5drTn/profile-cover-3819');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+div#personal-list {
+    ul {
+        li {
+            padding: 20px 0;
+            margin-bottom: 50px;
+            text-align: center;
+            div.img {
+                overflow: hidden;
+                margin: 0 auto 20px auto;
+                max-width: 240px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 0 #fff;
+                transition: box-shadow .3s linear;
+                img {
+                    width: 100%;
+                    display: block;
+                    filter: grayscale(100%);
+                    border-radius: 50%;
+                    transition: transform .2s linear;
+                }
+            }
+            h1.name {
+                font-size: 20px;
+                color: $backColor2;
+                box-shadow: 0 11px 17px -16px #000;
+                height: 34px;
+                font-weight: bold;
+                span {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            h2.title {
+                font-size: 13px;
+                color: #b1b1b1;
+            }
+            &:hover img {
+                transform: scale(1.1);
+            }
+            &:hover div.img {
+                box-shadow: 0 0 0 10px #fff;
+            }
+        }
+    }
+}
+
+#contact-info {
+    li {
+        display: block;
+        white-space: nowrap;
+        font-size: 17px;
+        border-bottom: 1px dashed #ccc;
+        padding: 10px;
+        i,
+        label {
+            vertical-align: middle;
+            font-weight: normal;
+            display: inline-block;
+            white-space: pre;
+            color: #444;
+        }
+        i {
+            margin-right: 20px;
+            width: 50px;
+            font-size: 30px;
+            position: relative;
+            &::after {
+                content: '';
+                width: 4px;
+                height: 4px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                border-right: 1px solid #333;
+                border-top: 1px solid #333;
+                transform: rotate(45deg);
+            }
+        }
+        a {
+            color: #333;
+        }
+    }
+}
+
+div#contact-form {
+    ul {
+        li {
+            span {
+                padding: 5px;
+                font-weight: bold;
+                margin: 10px 0;
+                display: block;
+                font-size: 14px;
+                color: $color2;
+            }
+            textarea,
+            input,
+            button {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                outline: none;
+                font-size: 14px;
+                font-family: arial;
+            }
+            input[type=text] {
+                width: 100%;
+            }
+            textarea {
+                resize: none;
+                height: 120px;
+            }
+            input[type=button] {}
+        }
+    }
+}
+
+div#contact-social-media {
+    a {
+        display: inline-block;
+        i {
+            display: block;
+            padding: 10px;
+            font-size: 32px;
+            color: #666;
         }
     }
 }

@@ -11,22 +11,22 @@ block content
           ul#contact-info
               li.address 
                 i(class="fa fa-map-marker",aria-hidden="true") 
-                label
+                span
                   |1255 La Quinta Drive
                   |Suite 200
                   |Orlando Florida 32809
               li.phone
                 i(class="fa fa-phone",aria-hidden="true")
-                label +800-2345-6789
+                span +800-2345-6789
               li.fax
                 i(class="fa fa-fax",aria-hidden="true")
-                label +800-2345-6789
+                span +800-2345-6789
               li.email
                 i(class="fa fa-envelope-o",aria-hidden="true")
-                label: a(href="mailto:info@mailserver.com") info@mailserver.com
+                span: a(href="mailto:info@mailserver.com") info@mailserver.com
               li.web
                 i(class="fa fa-globe",aria-hidden="true")
-                a(href="http://www.construction.com",target="_blank"): label www.construction.com
+                a(href="http://www.construction.com",target="_blank"): span www.construction.com
           
           h1.section-title Social Media
           div#contact-social-media
@@ -49,21 +49,21 @@ block content
             form(method="POST", id="contact-form",novalidate)
                 ul.col-md-12
                   li
-                    label YOUR NAME &amp; LASTNAME
+                    span YOUR NAME &amp; LASTNAME
                   li
-                    input(type="text", id="name", maxlength="30", required, placeHolder="YOUR NAME & LAST NAME", data-err="Your name and surname is required")
+                    input(type="text", id="name", maxlength="30", required, placeHolder="Your name and Last name", data-err="Your name and surname is required")
                 ul.col-md-6
                   li
-                    label EMAIL ADDRESS
-                    input(type="text", id="email", maxlength="50", required, placeHolder="EMAIL ADDRESS", data-err="Your email is required")
+                    span EMAIL ADDRESS
+                    input(type="text", id="email", maxlength="50", required, placeHolder="Email Address", data-err="Your email is required")
                 ul.col-md-6
                   li
-                    label GSM NUMBER * optional
-                    input(type="text", id="gsm", maxlength="25", placeHolder="GSM NUMBER", data-err="Input only numeric characters. Please, Do not use a space character")
+                    span GSM NUMBER * optional
+                    input(type="text", id="gsm", maxlength="25", placeHolder="GSM Number", data-err="Input only numeric characters. Please, Do not use a space character")
                 ul.col-md-12
                   li
-                    label MESSAGE
-                    textarea(placeHolder="YOUR MESSAGE", required, id="message",data-err="Please write your message")
+                    span MESSAGE
+                    textarea(placeHolder="Your Message", required, id="message",data-err="Please write your message")
                 ul.col-md-12
                   li
                     button.btn.btn-info(id="sendbutton") SEND MESSAGE

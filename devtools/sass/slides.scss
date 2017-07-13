@@ -11,7 +11,7 @@
 .slide-container .slide-template {
     white-space: nowrap;
     transition: left .5s cubic-bezier(0.77, 0, 0.175, 1);
-    margin-bottom:-5px;
+    margin-bottom: -5px;
 }
 
 .slide-container .slide-template::before,
@@ -27,9 +27,9 @@
 
 .slide-container .slide-container-dots {
     text-align: center;
-    width:100%;
-    bottom:30px;
-    position:absolute;
+    width: 100%;
+    bottom: 30px;
+    position: absolute;
 }
 
 .slide-container .slide-container-dots span {
@@ -37,16 +37,15 @@
     width: 25px;
     height: 25px;
     margin: 0 5px;
-    border-radius:50%;
+    border-radius: 50%;
     background-color: #ddd;
     box-shadow: 0 0 0 0 #6bc1e2, inset 0 0 0px 14px #fff;
-    transition:box-shadow .4s linear;
+    transition: box-shadow .4s linear;
 }
 
 .slide-container .slide-container-dots span.active {
-background-color: #6bc1e2;
-    box-shadow: 0 0 0px 4px rgba(0,0,0,0.32), inset 0 0px 0px 3px #fff;
-
+    background-color: #6bc1e2;
+    box-shadow: 0 0 0px 4px rgba(0, 0, 0, 0.32), inset 0 0px 0px 3px #fff;
 }
 
 .slide-container .slide-template .slide-item {

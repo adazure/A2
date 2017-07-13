@@ -13,13 +13,23 @@ gulp.task('script', function() {
 var sasspath = './devtools/sass/**/*.scss';
 gulp.task('sass', function() {
     return gulp.src(sasspath)
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('./assets/css/'));
 });
 
-gulp.task('default', ['sass', 'script'], function() {
+var csspath = './assets/css/*.css';
+gulp.task('css', function() {
+    return gulp.src(csspath)
+        .pipe(concat('common.css'))
+        .pipe(gulp.dest('./assets/css/min'));
+});
+
+
+
+gulp.task('default', ['css', 'sass', 'script'], function() {
     gulp.watch(sasspath, ['sass']);
+    gulp.watch(csspath, ['css']);
     gulp.watch(scriptpath, ['script']);
 });
