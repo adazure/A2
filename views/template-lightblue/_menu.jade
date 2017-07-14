@@ -1,7 +1,7 @@
 div#inner-menu
     div.container
         ul
-            li: a(href=pathController) HOME PAGE
+            li: a(href=pathController + '/' + lang.home.url) #{lang.home.title}
             li.active: a(href=pathController + '/' + lang.about.url) #{lang.about.title}
             li: a(href=pathController + '/' + lang.athletes.url) #{lang.athletes.title}
             li: a(href=pathController + '/' + lang.personal.url) #{lang.personal.title}

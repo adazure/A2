@@ -107,6 +107,13 @@ function contact(req, res, next) {
     res.render(getTemplate(req) + '/contact.jade', req.config);
 }
 
+
+
+//...................................................................
+
+
+
+
 function main(req, res, next) {
     res.render(getTemplate(req) + '/index.jade', req.config);
 }
@@ -165,9 +172,9 @@ function callback(req, res, next) {
 
 
     // 3 ayrı isim alan bir yapı oluşturduk
-    // Controller ismi ile Company bilgisi alınmakta
-    // Action ismi ile Company'e ait alt sayfa adı alınmakta
-    // Id ismi ile de alt sayfada açtırılacak, yapılacak veya yapılması istenen 3. işlemler için alıyoruz
+    // <@param Controller> ismi ile Company bilgisi alınmakta
+    // <@param Action> ismi ile Company'e ait alt sayfa adı alınmakta
+    // <@param Id> ismi ile de alt sayfada açtırılacak, yapılacak veya yapılması istenen 3. işlemler için alıyoruz
 
 
     // Controller/Actions/Id
@@ -204,7 +211,7 @@ function callback(req, res, next) {
 
 
 
-
+// İlgili kullanıcıya göre, kullanıcının seçmiş olduğu template'i varsayılan olarak yolunu seçer
 function getTemplate(req) {
     if (req.params.controller) {
         if (demo[req.params.controller]) {
@@ -225,24 +232,28 @@ function getTemplate(req) {
 
 
 
-
+// Dil dosyası
 var lang = {
     tr: {
-        news: { title: 'HABERLER', url: 'haberler' },
-        contact: { title: 'İLETİŞİM', url: 'iletisim' },
-        gallery: { title: 'GALERİ', url: 'galeri' },
-        personal: { title: 'PERSONEL', url: 'personel' },
-        athletes: { title: 'SPORCULAR', url: 'sporcular' },
-        about: { title: 'HAKKIMIZDA', url: 'hakkimizda' },
+        home: { title: 'Anasayfa', url: '', pagetitle: "Web sitemize hoş geldiniz" },
+        news: { title: 'Haberler', url: 'haberler', pagetitle: "Haberler" },
+        contact: { title: 'İletişim', url: 'iletisim', pagetitle: "İletişim" },
+        gallery: { title: 'Galeri', url: 'galeri', pagetitle: "Galeri" },
+        personal: { title: 'Personel', url: 'personel', pagetitle: "Personel" },
+        athletes: { title: 'Sporcular', url: 'sporcular', pagetitle: "Sporcular" },
+        about: { title: 'Hakkımızda', url: 'hakkimizda', pagetitle: "Hakkımızda" },
+        worktime: { title: 'Antreman Programı', url: 'antreman-programi', pagetitle: "Antreman Programı" },
         aboutread: 'HAKKINDA'
     },
     en: {
-        news: { title: 'NEWS', url: 'news' },
-        contact: { title: 'CONTACT', url: 'contact' },
-        gallery: { title: 'GALLERY', url: 'gallery' },
-        personal: { title: 'PERSONALS', url: 'personal' },
-        athletes: { title: 'ATHLETES', url: 'athletes' },
-        about: { title: 'ABOUT US', url: 'about' },
+        home: { title: 'Home Page', url: '', pagetitle: "Welcome Our Web Site" },
+        news: { title: 'Our News', url: 'news', pagetitle: "Our News" },
+        contact: { title: 'Contact Us', url: 'contact', pagetitle: "Contact Us" },
+        gallery: { title: 'Gallery', url: 'gallery', pagetitle: "Gallery" },
+        personal: { title: 'Personals', url: 'personal', pagetitle: "Personals" },
+        athletes: { title: 'Athletes', url: 'athletes', pagetitle: "Athletes" },
+        about: { title: 'About Us', url: 'about', pagetitle: "About Us" },
+        worktime: { title: 'Worktime', url: 'worktime', pagetitle: "Worktime" },
         aboutread: 'ABOUT'
     }
 };
@@ -253,7 +264,12 @@ var lang = {
 
 
 
-
+// Template'ler üzerinde kullanılacak linklendirme ve kullanılacak methodları belirler
+// Route içerisine belirtilen key değeri, açılmak istenen sayfaların adlarını simgeler
+// Object tipindeki nesne de, kullanılacak parametrelere göre şekillenir
+// Biz platformumuzu 3 ana route üzerine kurduk
+// Controller, Action ve Id
+// Burada ki tanımlamalara göre action ve id route değerlerine ilgili methodları atadık.
 var route = {
 
     //TR
