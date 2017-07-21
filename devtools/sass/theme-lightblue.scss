@@ -324,11 +324,14 @@ div#news-container {
     ul {
         li.news-item {
             margin: 10px 0;
-            box-shadow: 0 20px 39px -38px #000;
             padding: 27px 0;
             overflow: hidden;
+            &:nth-child(2n) {
+                background-color: #fbfbfb;
+            }
             &:last-child {
                 margin-bottom: 30px;
+                box-shadow: 0 20px 39px -38px #000;
             }
             div.image {
                 vertical-align: top;
@@ -343,15 +346,15 @@ div#news-container {
                 vertical-align: top;
                 overflow: hidden;
                 div.title {
-                    font-size: 24px;
-                    font-weight: bold;
+                    font-size: 20px;
                     color: $color1;
-                    margin-bottom: 10px;
+                    margin: 10px 0;
+                    line-height: 100%;
                 }
                 div.date {
-                    font-size: 16px;
+                    font-size: 13px;
                     font-weight: bold;
-                    color: #777;
+                    color: #ccc;
                 }
                 div.text {
                     font-style: italic;
@@ -383,7 +386,7 @@ div#personal-list {
                 max-width: 240px;
                 border-radius: 50%;
                 box-shadow: 0 0 0 0 #fff;
-                transition: box-shadow .3s linear;
+                transition: all .3s linear;
                 img {
                     width: 100%;
                     display: block;
@@ -398,7 +401,6 @@ div#personal-list {
                 box-shadow: 0 11px 17px -16px #000;
                 height: 34px;
                 font-weight: bold;
-                span {}
             }
             h2.title {
                 font-size: 15px;
@@ -410,6 +412,8 @@ div#personal-list {
             }
             &:hover div.img {
                 box-shadow: 0 0 0 10px #fff;
+                -webkit-filter: brightness(1.2);
+                filter: brightness(1.2);
             }
         }
     }
@@ -507,9 +511,17 @@ div#main-Services {
     .item {
         margin-bottom: 20px;
         .image {
+            overflow: hidden;
             img {
                 display: block;
                 width: 100%;
+                transform: scale(1) rotate(0deg);
+                transition: all .4s linear;
+                &:hover {
+                    transform: scale(1.05) rotate(-2deg);
+                    -webkit-filter: brightness(1.3);
+                    filter: brightness(1.3);
+                }
             }
         }
         .title {
