@@ -44,6 +44,26 @@ p {
     margin: 10px 0;
 }
 
+.clr-addr {
+    color: #c16888;
+}
+
+.clr-phn {
+    color: #b168c1;
+}
+
+.clr-fax {
+    color: #6872c1;
+}
+
+.clr-mail {
+    color: #68a3c1;
+}
+
+.clr-web {
+    color: #68c195;
+}
+
 button {
     &.reset {
         padding: 4px 20px;
@@ -68,6 +88,7 @@ button {
         background-color: $color1;
         color: $white;
         font-weight: bold;
+        border-radius: 4px;
         &:hover {
             background-color: $lightgray;
             color: $color1;
@@ -173,6 +194,7 @@ div {
             display: inline-block;
             background-color: #eee;
             padding: 6px 30px;
+            border-radius: 4px;
             &:hover {
                 background-color: $color1;
                 color: $white;
@@ -433,7 +455,6 @@ div#personal-list {
             font-weight: normal;
             display: table-cell;
             white-space: normal;
-            color: #444;
         }
         i {
             margin-right: 20px;
@@ -455,7 +476,8 @@ div#personal-list {
             }
         }
         a {
-            color: #333;
+            vertical-align: middle;
+            display: inline-block;
         }
     }
 }
@@ -589,6 +611,7 @@ div#worktime-container {
     background-image: url(/assets/images/IMG_321101.png);
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 65px;
     table.worktime-table {
         background-color: white;
         border: 1px solid #eee;
@@ -695,11 +718,19 @@ div#worktime-container {
 #gallery-container {
     ul {
         li {
-            padding: 2px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow: hidden;
             img {
                 width: 100%;
                 display: block;
-                filter: grayscale(80%);
+                //filter: grayscale(90%);
+                transition: all .4s linear;
+                &:hover {
+                    transform: scale(1.05);
+                    -webkit-filter: grayscale(50%);
+                    filter: grayscale(50%);
+                }
             }
         }
     }
