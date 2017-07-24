@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require("gulp-concat");
 var sourcemaps = require('gulp-sourcemaps');
+var cssmin = require('gulp-cssmin');
+var rename = require('gulp-rename');
 
 var scriptpath = './devtools/scripts/**/*.js';
 gulp.task('script', function() {
@@ -23,6 +25,7 @@ var csspath = './assets/css/*.css';
 gulp.task('css', function() {
     return gulp.src(csspath)
         .pipe(concat('common.css'))
+        .pipe(cssmin())
         .pipe(gulp.dest('./assets/css/min'));
 });
 

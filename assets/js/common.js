@@ -209,6 +209,7 @@ var fsgallery = (function(config) {
     }
 
     function remove(i, z) {
+        if (!z) return;
         z.className = 'fsg-item fsg-removed';
         setTimeout(function() { z.parentNode.removeChild(z); }, config.removeTimer);
     }

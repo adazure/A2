@@ -29,4 +29,4 @@ block content
             li.col-sm-4.col-xs-6: img(data-fullscreen="https://www.holidayguru.ie/wp-content/uploads/2016/07/Amsterdam-summer-sunrise-iStock_000048084840_Large-2.jpg",src="https://www.holidayguru.ie/wp-content/uploads/2016/07/Amsterdam-summer-sunrise-iStock_000048084840_Large-2.jpg")     
             li.col-sm-4.col-xs-6: img(data-fullscreen="https://www.holidayguru.ie/wp-content/uploads/2016/07/Amsterdam-summer-sunrise-iStock_000048084840_Large-2.jpg",src="https://www.holidayguru.ie/wp-content/uploads/2016/07/Amsterdam-summer-sunrise-iStock_000048084840_Large-2.jpg")     
 
-    script(defer, async) fsgallery.init({data:'#gallery-container.container img'});
+    script(defer) setTimeout(function(){ fsgallery.init({data:'#gallery-container.container img'});},1000);
