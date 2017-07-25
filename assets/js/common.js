@@ -142,12 +142,30 @@ var fsgallery = (function(config) {
     var zIndex = 100;
     var fsgStatus = false;
     var elements = {};
+    var showItems = [];
 
     function check(url) {
         var http = new XMLHttpRequest();
         http.open('HEAD', url, false);
         http.send();
         return http.status != 404;
+    }
+
+    function prevEvent(e) {
+        if (currentIndex < config.images.length - 1)
+            currentIndex++;
+        else
+            currentIndex = 0;
+        show(currentIndex);
+    }
+
+    function nextEvent(e) {
+        if (currentIndex > 0)
+            currentIndex--;
+        else
+            currentIndex = config.images.length - 1;
+
+        show(currentIndex);
     }
 
     function create() {
@@ -158,7 +176,8 @@ var fsgallery = (function(config) {
         elements.prev.id = 'fsg-prev';
         elements.prev.className = elements.next.className = 'fsg-arrow';
         elements.next.id = 'fsg-next';
-
+        elements.prev.addEventListener('click', prevEvent);
+        elements.next.addEventListener('click', nextEvent);
         fsgStatus = true;
         appendItem(document.body, elements.shadow, elements.next, elements.prev);
     }
@@ -166,23 +185,23 @@ var fsgallery = (function(config) {
     function show(index) {
 
         if (!fsgStatus) create();
+        remove(function() {
+            if (check(config.images[index])) {
 
-        remove();
-
-        var container = document.createElement('div');
-        container.className = 'fsg-item';
-        container.style.zIndex = zIndex;
-        if (check(config.images[index])) {
-            var image = new Image();
-            image.src = config.images[index].getAttribute('data-fullscreen');
-            container.appendChild(image);
-            zIndex++;
-            currentIndex = index;
-            currentItem = container;
-            document.body.appendChild(container);
-            currentItem.addEventListener('click', hide, false);
-            return container;
-        }
+                var container = document.createElement('div');
+                document.body.appendChild(container);
+                container.className = 'fsg-item';
+                container.style.zIndex = zIndex;
+                var image = new Image();
+                image.src = config.images[index].getAttribute('data-fullscreen');
+                container.appendChild(image);
+                zIndex++;
+                currentIndex = index;
+                currentItem = container;
+                currentItem.addEventListener('click', hide, false);
+                showItems.push(container);
+            }
+        });
 
     }
 
@@ -202,16 +221,17 @@ var fsgallery = (function(config) {
 
     function hide() {
         removeItem(elements.shadow, elements.prev, elements.next);
-        remove(currentIndex, currentItem);
-        currentIndex = -1;
-        currentItem = null;
-        fsgStatus = false;
+        remove(function() {
+            currentIndex = -1;
+            currentItem = null;
+            fsgStatus = false;
+        });
     }
 
-    function remove(i, z) {
-        if (!z) return;
-        z.className = 'fsg-item fsg-removed';
-        setTimeout(function() { z.parentNode.removeChild(z); }, config.removeTimer);
+    function remove(action) {
+        if (currentItem)
+            currentItem.parentNode.removeChild(currentItem);
+        action();
     }
 
     function start(args) {
@@ -232,7 +252,6 @@ var fsgallery = (function(config) {
             currentIndex++;
             show(currentIndex);
         }
-
         showHideArrow();
     }
 
