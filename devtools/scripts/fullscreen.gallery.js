@@ -41,6 +41,7 @@ var fsgallery = (function(config) {
         elements.next.id = 'fsg-next';
         elements.prev.addEventListener('click', prevEvent);
         elements.next.addEventListener('click', nextEvent);
+        elements.shadow.addEventListener('click', hide, false);
         fsgStatus = true;
         appendItem(document.body, elements.shadow, elements.next, elements.prev);
     }
